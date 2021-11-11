@@ -101,7 +101,7 @@ public class ${entity} implements Serializable {
     <#if (logicDeleteFieldName!"") == field.name>
     @TableLogic
     </#if>
-    private ${field.propertyType} ${field.propertyName};
+    private String ${field.propertyName};
 </#list>
 <#------------  END 字段循环遍历  ---------->
 
