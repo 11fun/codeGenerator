@@ -79,12 +79,12 @@ public class CodeGenerator {
         templateConfig.setXml(null);
         //自定义配置模板
        
-        templateConfig.setController("/genaratorTemplates/controller.java");
-        templateConfig.setEntity("/genaratorTemplates/entity.java");
-        templateConfig.setEntityKt("/genaratorTemplates/entity.kt");
-        templateConfig.setMapper("/genaratorTemplates/mapper.java");
-        templateConfig.setService("/genaratorTemplates/service.java");
-        templateConfig.setServiceImpl("/genaratorTemplates/serviceImpl.java");
+        templateConfig.setController("/generatorTemplates/controller.java");
+        templateConfig.setEntity("/generatorTemplates/entity.java");
+        templateConfig.setEntityKt("/generatorTemplates/entity.kt");
+        templateConfig.setMapper("/generatorTemplates/mapper.java");
+        templateConfig.setService("/generatorTemplates/service.java");
+        templateConfig.setServiceImpl("/generatorTemplates/serviceImpl.java");
         
       
         
