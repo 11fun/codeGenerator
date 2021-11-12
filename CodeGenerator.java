@@ -42,22 +42,23 @@ public class CodeGenerator {
 	
 	
 	// 自定义
-	private static final String dataBaseURL="jdbc:mysql://192.168.1.116:3306/test"
-			+ "?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 	private static final String dataBaseName = "test";
-	private static final String driverName="com.mysql.cj.jdbc.Driver";
+	private static final String URL= "192.168.1.116";
 	private static final String Name="root";
 	private static final String passWord="";
-	
 	private static final String packageName = "com";
 	private static final String moduleName = "system";
 	private static final String author = "11fun";
+	
+	
 	private static String[] tableName = getTableNames();
 //	private static String[] tableName = new String[] {"sysfile"};
 	private static final String tablePrefix = "sys";
+
+	private static final String driverName="com.mysql.cj.jdbc.Driver";
+	private static final String dataBaseURL="jdbc:mysql://"+URL+":3306/"+dataBaseName+
+			+ "?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 	private static Connection conn = null;
-	
-	
 
 	@Test
 	public void main()   {
