@@ -56,7 +56,7 @@ public class CodeGenerator {
 	private static final String tablePrefix = "sys";
 
 	private static final String driverName="com.mysql.cj.jdbc.Driver";
-	private static final String dataBaseURL="jdbc:mysql://"+URL+":3306/"+dataBaseName+
+	private static final String dataBaseURL="jdbc:mysql://"+URL+":3306/"+dataBaseName
 			+ "?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 	private static Connection conn = null;
 
