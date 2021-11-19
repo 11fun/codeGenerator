@@ -1,6 +1,9 @@
 package ${package.Controller};
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,8 +12,8 @@ import com.common.util.BaseUtil;
 import com.common.util.QueryRequest;
 import com.common.util.Response;
 
-import com.system.entity.${table.name}Do;
-import com.system.service.${table.name}Service;
+import com.system.entity.${table.name?cap_first}Do;
+import com.system.service.${table.name?cap_first}Service;
 
 
 <#if restControllerStyle>
@@ -45,23 +48,23 @@ public class ${table.controllerName} extends ${superControllerClass} {
 public class ${table.controllerName} {
 </#if>
 	@Autowired
-	${table.name}Service ${table.name}Service;
+	${table.name?cap_first}Service ${table.name}Service;
 	
 	@GetMapping("/select")
-	public Response  select(QueryRequest qr,${table.name}Do ${table.name}) {
-		Page<${table.name}Do> page = new Page<>(qr.getPage(), qr.getLimit());
-		QueryWrapper<${table.name}Do> queryWrapper = BaseUtil.reflect(${table.name});
-		Page<${table.name}Do> pageData = ${table.name}Service.page(page, queryWrapper);
+	public Response  select(QueryRequest qr,${table.name?cap_first}Do ${table.name}) {
+		Page<${table.name?cap_first}Do> page = new Page<>(qr.getPage(), qr.getLimit());
+		QueryWrapper<${table.name?cap_first}Do> queryWrapper = BaseUtil.reflect(${table.name});
+		Page<${table.name?cap_first}Do> pageData = ${table.name}Service.page(page, queryWrapper);
 		return new Response().success().data(pageData);
 	}
 	
 	@PostMapping("/insert")
-	public Response insert(@Validated ExchangeDo exchanges,BindingResult br) {
+	public Response insert(@Validated ${table.name?cap_first}Do ${table.name},BindingResult br) {
 		
 	}
 	
 	@PostMapping("/update")
-	public Response update(@Validated ExchangeDo exchanges,BindingResult br) {
+	public Response update(@Validated ${table.name?cap_first}Do ${table.name},BindingResult br) {
 		
 	}
 	
