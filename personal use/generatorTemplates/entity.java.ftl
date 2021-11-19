@@ -65,7 +65,7 @@ public class ${entity} implements Serializable {
      */		
 			<#if field.comment?contains(".")>
 				<#if field.comment?contains("notnull")>
-	@NotBlank(message = "${field.propertyName}不能为空！")	
+	@NotBlank(message = "${field.comment?substring(0,field.comment?index_of("."))}不能为空！")	
 				</#if>	
 				<#if field.comment?contains("-")>		
 	@Length(min=${field.comment?substring(((field.comment?index_of("-"))-1),(field.comment?index_of("-")))},max=${field.comment?substring(((field.comment?index_of("-"))+1))})			
